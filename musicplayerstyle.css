@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gluten',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5eeee;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 5px;
+    background: rgb(114, 117, 117);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin:10px;
+    cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #c0ebc0;
+    position: relative;
+    cursor: pointer;
+}
+input[type="range"]:hover::-webkit-slider-thumb {
+    border: 3px solid #0ba9da;
+}
+
+.head{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.display{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50px;top: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgb(0, 0, 0);
+    border: 1px solid white;
+    color: #faf7f6;
+    font-size: 2em;
+    border-radius: 50%;
+}
+.display .uil{
+    font-size: .5em;
+}
+.head .roundRotate{
+    animation: animateDisplay 5s linear infinite;
+}
+@keyframes animateDisplay {
+    0%{
+        box-shadow: inset 5px -5px 5px rgba(168, 18, 18, 0.9),
+                    5px 5px 10px rgba(172, 27, 27, 0.5),   
+                    0 10px 15px rgba(185, 17, 17, 0.5) ;  
+       transform: rotate(0deg) scale(1);
+       filter: hue-rotate(0deg);
+    }
+    50%{
+        box-shadow: inset 0 -5px 5px rgba(141, 168, 18, 0.9),
+                    5px 5px 10px rgba(73, 172, 27, 0.5),   
+                    -10px -10px 15px rgba(30, 218, 5, 0.5) ; 
+        transform: rotate(180deg) scale(1.2);
+        filter: hue-rotate(180deg);
+    }
+    100%{
+        box-shadow: inset 5px -5px 5px rgba(168, 18, 18, 0.9),
+                    5px 5px 10px rgba(172, 27, 27, 0.5),   
+                    0 10px 15px rgba(185, 17, 17, 0.5) ;
+        transform: rotate(360deg) scale(1);
+        filter: hue-rotate(360deg);
+    }
+}
+
+.title{
+    display: inline-flex;
+    text-align: center;
+    margin-left: 50px;
+    font-size: 2em;
+    font-weight: 400;
+    color: #f8f8f8;
+}
+.musicPlayer{
+    position: relative;
+    width: 600px;
+    min-height: 100px;
+    background: #f2f2f7;
+    background: #11131d;
+    border: 10px double #1d0a0ac2;
+    border-radius: 80px;
+    padding: 30px;
+    flex-direction: column;
+    box-shadow: 
+                -5px -5px 20px #9b9292,
+                5px 5px 20px #d3cdcd,
+                inset -5px -5px 10px #3d3d3d, 
+                inset 5px 5px 10px #3d3d3d ;
+}
+.controls{
+    display: flex;
+    flex-direction: column;
+}
+.seekSection{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.seekSection .timeView{
+    color: rgb(250, 246, 246);
+}
+.seekSection .audioSeekBar{
+    width: 80%;
+}
+.seekSection .timeView{
+    width: 20%;
+}
+
+.buttonsSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btns{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btns span{
+    position: relative;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(197, 4, 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(248, 246, 246);
+    cursor: pointer;
+    box-shadow: inset 0 -5px 5px rgba(223, 216, 216, 0.801),
+                     0 5px 10px rgba(214, 207, 207, 0.5),   
+                     0 10px 15px rgba(194, 180, 180, 0.651) ;  
+}
+.btns span:active,
+.btns span.active
+{
+    color: rgb(142, 225, 235);
+    box-shadow: inset 0 -7px 5px rgba(0, 0, 0, 0.025),
+    inset 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.btns span.playPause{
+    width: 70px;
+    height: 70px;
+    margin: 0 10px;
+}
+.btns span.prev{
+    border-radius: 80% 20% 20% 80% / 50% 20% 20% 50%;
+}
+.btns span.next{
+    border-radius: 20% 80% 80% 20% / 20% 50% 50% 20%;
+}
+.btns div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.btns span.stop{
+    width: 35px;
+    height: 35px;
+}
+.btns span .uil{
+    font-size: 2em;
+}
+.btns span.playPause .uil{
+    font-size: 3em;
+}
+.btns span.stop .uil{
+    font-size: 1.2em;
+}
+.btns span.playPause::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    transform: translate(-3px,-3px);
+    box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.1),
+            0 5px 10px rgba(0, 0, 0,0.1),   
+            0 10px 15px rgba(0, 0, 0,0.1) ;
+}
+.btns span.round::before{
+   animation: animate linear 5s infinite ;
+}
+@keyframes animate {
+    0% , 100%{
+        box-shadow: inset 5px -5px 5px rgba(168, 18, 18, 0.9),
+            5px 5px 10px rgba(172, 27, 27, 0.5),   
+            0 10px 15px rgba(185, 17, 17, 0.5) ;
+    }
+    50%{
+        box-shadow: inset 0 -5px 5px rgba(141, 168, 18, 0.9),
+            5px 5px 10px rgba(73, 172, 27, 0.5),   
+            -10px -10px 15px rgba(30, 218, 5, 0.5)  ;
+    }
+}
+
+.volume,
+.controls .speed,
+.download
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.volume span,
+.speed .speedBtn,
+.download a
+{
+    position: relative;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgb(41, 15, 15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(248, 238, 238);
+    cursor: pointer;
+    box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.1),
+                     0 5px 10px rgba(0, 0, 0,0.1),   
+                     0 10px 15px rgba(0, 0, 0,0.1) ;
+}
+.volume span .uil,
+.speed .speedBtn .uil,
+.download a .uil
+{
+    font-size: 1.5em;
+}
+
+.volume div
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:  50% 10% 10% 50% / 50% 50% 50% 50%;
+    top: -70px;
+    background: transparent;
+    transform: rotate(-90deg);
+}
+.volume div .volumeSeekBar{
+    width: 100px;
+    height: 25px;
+    background-image: linear-gradient(to right ,rgb(79, 194, 79) 50%,yellow,orange,red);
+    border-radius: 90% 10% 10% 90% / 50% 20% 20% 50%;
+    display: none;
+}
+.volume div .volumeSeekBar::-webkit-slider-thumb {
+    width: 3.5px;
+    height: 15px;
+}
+.volume div .volumeSeekBar:hover::-webkit-slider-thumb {
+    border: none;
+}
+.volume:hover .volumeSeekBar{
+    display: block;
+}
+
+.speed .speed_div
+{
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: -110px;
+    width: 190px;
+    height: 50px;
+    background: rgb(46, 41, 41);
+    border-radius: 5px;
+    z-index: 1;
+    transform: rotate(90deg);
+    display: none;
+}
+.speed .speed_div .speedSeekBar{
+    position: absolute;
+    width: 180px;
+    height: 100%;
+    background: #c7d4d43d;
+}
+.speed .speed_div .speedSeekBar::-webkit-slider-thumb {
+    width: 20px;
+    height: 50px;
+    border-radius: 0;
+    background: rgba(224, 204, 204, 0.11);
+    border: 1px solid rgb(255, 241, 241);
+}
+.speed .speed_div .speedSeekBar:hover::-webkit-slider-thumb {
+    border: 1px solid rgb(236, 246, 248);
+}
+.speed .speed_div .speed_values{
+    display: flex;
+    justify-content:space-between;
+}
+.speed .speed_div .speed_values span{
+    font-size: 0.6rem;
+    font-weight: bold;
+    transform: rotate(-90deg);
+    color: rgb(255, 255, 255);
+}
+.speed:hover .speed_div{
+    display: flex;
+}
+

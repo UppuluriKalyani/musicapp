@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="musicplayerstyle.css">
+</head>
+
+<body>
+    <div class="musicPlayer">
+
+        <audio src=""></audio>
+
+        <div class="head">
+            <div class="display">
+                <i class="uil uil-music-note"></i>
+                <i class="uil uil-music"></i>
+                <i class="uil uil-music-note"></i>
+            </div>
+            <div class="title">Music Name</div>
+        </div>
+
+        <div class="controls">
+
+            <div class="seekSection">
+                <div class="timeView">00:00/00:00</div>
+                <input type="range" class="audioSeekBar" value="0" />
+            </div>
+
+            <div class="buttonsSection">
+                <div class="btns">
+                    <span class="prev">
+                        <i class="uil uil-backward"></i>
+                    </span>
+                    <span class="playPause">
+                        <i class="uil uil-play"></i>
+                    </span>
+                    <span class="next">
+                        <i class="uil uil-forward"></i>
+                    </span>
+                    <span class="stop">
+                        <i class="uil uil-square-shape"></i>
+                    </span>
+                </div>
+                
+                <div class="volume">
+                    <span class="volumeToggle">
+                        <i class="uil uil-volume"></i>
+                    </span>
+                    <div>
+                        <input type="range" class="volumeSeekBar" value="50" />
+                    </div>
+                </div>
+                
+                <div class="speed">
+                    <span class="speedBtn">
+                        <i class="uil uil-tachometer-fast-alt"></i>
+                    </span>
+                    <div class="speed_div">
+                        <div class="speed_values">
+                            <span>0.25x</span>
+                            <span>0.50x</span>
+                            <span>0.75x</span>
+                            <span>1.00x</span>
+                            <span>1.25x</span>
+                            <span>1.50x</span>
+                            <span>1.75x</span>
+                            <span>2.00x</span>
+                        </div>
+                        <input type="range" min="1" max="8" value="4" class="speedSeekBar" />
+                    </div>
+                </div>
+                
+                <div class="download">
+                    <a download="" href="" class="downloadButton">
+                        <i class="uil uil-download-alt"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="musicscript.js"></script>
+
+</body>
+
+</html>
